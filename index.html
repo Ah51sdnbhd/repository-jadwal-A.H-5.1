@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jadwal by A.H 5.1 Sdn.Bhd.</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+
+    <div class="dashboard-container">
+        
+        <header class="glass-box text-center main-header">
+            <h1 class="glow-text">Ramadhan Dashboard X TE 2</h1>
+            <p class="subtitle">SMK Negeri 1 Semarang • Genap 2025/2026</p>
+            
+            <div class="live-clock-panel">
+                <span id="date-display">Memuat Hari...</span> | <span id="clock-display" class="neon-time">00:00:00</span>
+            </div>
+        </header>
+
+        <nav class="nav-toggles">
+            <button class="glass-btn active" data-target="jadwal">
+                <i class="fas fa-chalkboard-teacher"></i> Jadwal Pelajaran
+            </button>
+            <button class="glass-btn" data-target="imsakiyah">
+                <i class="fas fa-mosque"></i> Jadwal Imsakiyah
+            </button>
+        </nav>
+
+        <!-- AREA 1: JADWAL PELAJARAN -->
+        <section id="jadwal-section" class="tab-content active glass-box">
+            <div class="section-header">
+                <h2><i class="fas fa-book-open"></i> Manajemen PBM </h2>
+                <div class="status-indicator" id="lesson-status">Sinkronisasi...</div>
+            </div>
+
+            <!-- Opsi Penglihatan Tabel/Mode -->
+            <div class="view-toggles">
+                <button class="view-btn active" onclick="setModeJadwal('today')" id="vbtn-jadwal-today">Pelajaran Hari Ini (<span id="j-lbl-today">..</span>)</button>
+                <button class="view-btn" onclick="setModeJadwal('all')" id="vbtn-jadwal-all">Tampilkan Senin - Jumat</button>
+            </div>
+
+            <!-- Box mode Hari Ini (Otomatis Highlight Pelajaran) -->
+            <div id="jadwal-today-wrapper" class="jadwal-container scroll-active"></div>
+
+            <!-- Box mode Full Minggu (Ditampilkan secara kolom) -->
+            <div id="jadwal-full-wrapper" class="full-week-grid hidden"></div>
+        </section>
+
+        <!-- AREA 2: JADWAL IMSAKIYAH -->
+        <section id="imsakiyah-section" class="tab-content glass-box">
+            <div class="section-header center-head">
+                <div class="maghrib-countdown-box w-100 text-center">
+                    <p id="countdown-label">Menunggu Analisa Jam</p>
+                    <h3 id="countdown-timer" class="neon-text-orange">--:--:--</h3>
+                </div>
+            </div>
+
+            <div class="view-toggles">
+                <button class="view-btn active" onclick="setModeImsakiyah('today')" id="vbtn-ims-today">Sholat Hari Ini</button>
+                <button class="view-btn" onclick="setModeImsakiyah('all')" id="vbtn-ims-all">Lihat Jadwal Full Ramadhan 2026</button>
+            </div>
+
+            <!-- Tampilan Bersih 6 Kotak Doa -->
+            <div id="imsakiyah-today-wrapper">
+                <div class="doa-today-grid" id="prayer-today-grid"></div>
+            </div>
+
+            <!-- Mode Full Table Scroll-->
+            <div id="imsakiyah-full-wrapper" class="table-wrapper hidden">
+                <table class="glass-table">
+                    <thead>
+                        <tr><th>Hari</th><th>Tanggal</th><th>Imsak</th><th>Subuh</th><th>Dzuhur</th><th>Ashar</th><th>Maghrib</th><th>Isya'</th></tr>
+                    </thead>
+                    <tbody id="imsakiyah-tbody"></tbody>
+                </table>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Tombol URL Mengapung Tetap ada! -->
+    <a href="https://ah51sdnbhd.github.io/project-x2391/" target="_blank" class="floating-badge">
+        <div class="floating-content">
+            <i class="fas fa-external-link-alt icon"></i><span class="text">Kunjungi Website Saya</span>
+        </div>
+        <div class="floating-hint">Klik untuk membuka</div>
+    </a>
+
+    <script src="script.js"></script>
+</body>
+</html>
