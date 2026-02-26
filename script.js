@@ -56,7 +56,7 @@ const JADWAL_PELAJARAN = {
         { j: '10', w: '13:55 - 14:30', mp: 'Matematika', g: 'Kusriyantini, S.Pd', brk: false }
     ],
     Jumat:[
-        { j: '1', w: '07:30 - 08:30', mp: 'Jumaat' g: '404 name not found', brk: false },
+        { j: '1', w: '07:30 - 08:30', mp: 'Jumaat', g: '404 name not found', brk: false },
         { j: '2', w: '08:30 - 09:05', mp: 'IPAS', g: 'Lukas Yudi Setiawan', brk: false },
         { j: '3', w: '09:05 - 09:40', mp: 'IPAS', g: 'Lukas Yudi Setiawan', brk: false },
         { j: '-', w: '09:40 - 09:55', mp: 'Istirahat', g: '—', brk: true },
@@ -312,3 +312,4 @@ function EngineTransisiDoaImsak(O_Now, todayId_stringStr) {
      }
 
 }
+
